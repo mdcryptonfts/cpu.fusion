@@ -17,6 +17,7 @@ ACTION cpucontract::claimrefund()
 }
 
 ACTION cpucontract::initstate(){
+	require_auth( _self );
 	eosio::check(!state_s.exists(), "state already exists");
 
 	state s{};
